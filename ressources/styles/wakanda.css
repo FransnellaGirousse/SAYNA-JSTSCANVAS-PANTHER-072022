@@ -1,0 +1,410 @@
+:root {
+  --violet-primaire: #3D2DA6;
+  --violet-secondaire: #07338C;
+  --violet-tertiaire: #021740;
+  --white: #FFFFFF;
+  --white-primaire: #F2CEF2;
+  --white-violet-1: #9E91B7;
+  --white-violet-2: #DF99F2;
+}
+
+/* Definition des typographies  */
+@font-face {
+  font-family: "beyno";
+  src: url("fonts/BEYNO.ttf");
+}
+@font-face {
+  font-family: "cantarell";
+  src: url("fonts/Cantarell-Regular.ttf");
+}
+@font-face {
+  font-family: "panthera";
+  src: url("fonts/panthera.otf");
+}
+@font-face {
+  font-family: "WakandaForever";
+  src: url("fonts/WakandaForever-Regular.ttf");
+}
+/* Fin typographie */
+/* Definition de style global */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "panthera";
+  font-size: 68px;
+  font-style: regular;
+  color: var(--white-violet-1);
+  margin: 10px 0px;
+}
+
+h2,
+h3 {
+  font-family: "beyno";
+  font-size: 32px;
+  font-style: regular;
+  color: var(--white-violet-1);
+}
+
+p {
+  font-family: "cantarell";
+  font-size: 14px;
+  color: var(--white-primaire);
+}
+
+body {
+  background: radial-gradient(126.67% 350.28% at -21.35% 0%, #11213F 0%, #0B0B0B 39.1%, rgba(2, 23, 64, 0.837641) 94.57%, rgba(2, 23, 64, 0) 100%);
+}
+
+.btn-form {
+  font-family: "cantarell";
+  font-style: bold;
+  width: 174px;
+  height: 54px;
+  border-radius: 38px;
+  color: var(--violet-tertiaire);
+  border: 0;
+  background-color: var(--white-primaire);
+}
+
+/* popupbox */
+.box-popup {
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #3D2DA6 10%, #021740 100%);
+}
+.box-popup .popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 80%;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #9E91B7 30%, #3D2DA6 100%);
+}
+.box-popup .popup p {
+  text-transform: uppercase;
+  font-family: "cantarell";
+  font-size: 20px;
+}
+.box-popup .popup a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--viloet-tertiaire);
+  background-color: var(--white-primaire);
+  border-radius: 25px;
+  padding: 15px 20px;
+  margin: 50px 0px;
+}
+.box-popup .popup .chrono {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.box-popup .popup .chrono #hour {
+  display: block;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .box-popup {
+    top: 15%;
+    left: 5%;
+    width: 90%;
+    height: 70%;
+  }
+}
+.social-logo {
+  position: fixed;
+  top: 0;
+  left: 2.5%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid var(--white-violet-1);
+  border-bottom: 0;
+  border-top: 0;
+  border-right: 0;
+}
+.social-logo .vertical {
+  height: 40vh;
+  border: 2px solid var(--white-violet-1);
+}
+.social-logo .social-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.social-logo .social-icon img {
+  margin: 0px;
+  margin: 10px 10px;
+  padding-top: 5px;
+}
+
+#div-canvas {
+  z-index: 2;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  width: 100%;
+}
+
+/* Propriete style header  */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  height: 100px;
+}
+header .logos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .logos img {
+  margin: 5px;
+}
+header .logos:hover {
+  filter: brightness(0) saturate(100%) invert(61%) sepia(19%) saturate(431%) hue-rotate(219deg) brightness(95%) contrast(88%);
+}
+header .menu .active {
+  text-decoration: underline;
+  color: var(--violet-primaire);
+}
+header .menu ul li {
+  display: inline-block;
+  margin: 20px;
+}
+header .menu ul li a {
+  text-decoration: none;
+  font-family: "beyno";
+  font-size: 15px;
+  font-style: regular;
+  color: var(--white);
+}
+header .menu ul li a:hover {
+  text-decoration: underline;
+  color: var(--violet-primaire);
+}
+
+/* Responsive*/
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .menu ul li {
+    display: block;
+    margin: 20px;
+    text-align: center;
+  }
+}
+/* Definition style footer */
+footer {
+  background: linear-gradient(to bottom, #3D2DA6 0%, #021740 30%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0px;
+}
+footer .logo-footer {
+  background-image: url("../assets/Group 2052.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 385px;
+  width: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
+}
+footer .logo-footer:hover {
+  transform: scale(1.1);
+}
+footer .polices {
+  display: flex;
+  flex-direction: column;
+  height: 385px;
+  margin-left: 50px;
+}
+footer .polices .lien {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+footer .polices .lien .titre {
+  font-family: "cantarell";
+  font-size: 22px;
+  color: var(--white);
+  letter-spacing: 0.28em;
+  margin-bottom: 25px;
+}
+footer .polices .lien .pages ul li {
+  display: block;
+  margin-bottom: 10px;
+}
+footer .polices .lien .pages ul li a {
+  text-decoration: none;
+  font-family: "cantarell";
+  font-size: 16px;
+  color: var(--white);
+}
+footer .polices .lien .social .logo-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .polices .lien .social .logo-social img:hover {
+  transform: scale(1.1);
+}
+footer .polices .droits {
+  text-decoration: none;
+  font-family: "cantarell";
+  font-size: 14px;
+  color: var(--white);
+  align-items: center;
+  margin-top: 100px;
+}
+footer .polices .droits p span {
+  font-family: " sans-serif";
+  font-size: 5em;
+  border-radius: 50%;
+}
+
+/* Responsive*/
+@media (max-width: 800px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  footer .policies {
+    margin: 0px;
+    height: auto;
+  }
+  footer .policies .link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  footer .policies .link .pages,
+  footer .policies .link .social {
+    margin: 20px 0px;
+  }
+  footer .policies .condition-right {
+    margin-top: 10px;
+  }
+}
+#wakanda {
+  background-image: url("../assets/2_Wakanda_page/Pantherwakanda1.png");
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.intro-wakanda {
+  margin: auto;
+  width: 80%;
+  text-align: left;
+}
+.intro-wakanda .titre-wakanda {
+  font-size: 58px;
+  margin-bottom: 5px;
+}
+.intro-wakanda .soustitre-wakanda {
+  font-family: "WakandaForever";
+  color: #9E91B7;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+.intro-wakanda .text-wakanda {
+  display: block;
+  width: 400px;
+  text-align: justify;
+}
+
+/* section a propos */
+#apropos {
+  background-image: url("../assets/2_Wakanda_page/Pantherwakanda2.png");
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  gap: 7rem;
+  padding: 10%;
+  font-family: "Cantarell";
+  font-size: 12px;
+  color: white;
+  text-align: justify;
+  position: relative;
+}
+#apropos p span {
+  display: block;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+#apropos h2 {
+  margin: 20px 0px;
+  font-size: 20px;
+}
+
+.left-apropos,
+.right-apropos {
+  width: 550px;
+}
+
+.left-apropos .videos-container {
+  width: 100%;
+  height: 220px;
+  background-color: var(--violet-primaire);
+  margin: 50px 0px;
+}
+
+.right-apropos img {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  #wakanda {
+    background-image: url("../assets/2_Wakanda_page/Pantherwakanda1.png");
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+  }
+  .intro-wakanda {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+  }
+  .intro-wakanda .text-wakanda {
+    width: auto;
+    text-align: justify;
+  }
+  #apropos {
+    display: flex;
+    flex-direction: column;
+    padding: 7% 0%;
+  }
+  .left-apropos,
+  .right-apropos {
+    margin: auto;
+    width: 90%;
+  }
+}/*# sourceMappingURL=wakanda.css.map */
